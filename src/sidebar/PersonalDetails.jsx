@@ -1,6 +1,6 @@
 export default function PersonalDetails() {
   return (
-    <>
+    <div className="personal-details">
       <div className="personal-details-header">
         {/* TODO: Add SVG */}
         <h2>Personal Details</h2>
@@ -19,6 +19,6 @@ export default function PersonalDetails() {
         placeholder="Write your personal profile here..."
         maxLength={400}
       ></textarea>
-    </>
+    </div>
   );
 }
