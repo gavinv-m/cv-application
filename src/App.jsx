@@ -3,6 +3,7 @@ import Header from './sidebar/Header';
 import PersonalDetails from './sidebar/PersonalDetails';
 import ContactDetails from './sidebar/ContactDetails';
 import WorkExperience from './sidebar/WorkExperience';
+import Education from './sidebar/Education';
 
 export default function App() {
   // prettier-ignore
@@ -18,6 +19,10 @@ export default function App() {
   // prettier-ignore
   const [contactDetails, setContactDetails] = useState(
     {email: '', number: '', location: ''});
+
+  const [education, setEducation] = useState([
+    { school: '', degree: '', key: crypto.randomUUID() },
+  ]);
 
   const updateExp = function updateExperience(key, field, newValue) {
     setWorkExperience((prev) => {
@@ -37,6 +42,16 @@ export default function App() {
     setContactDetails({ ...contactDetails, [field]: newValue });
   };
 
+  const updateEdu = function updateEducation(key, field, newValue) {
+    setEducation((prev) => {
+      return prev.map((qualification) => {
+        return qualification.key === key
+          ? { ...qualification, [field]: newValue }
+          : qualification;
+      });
+    });
+  };
+
   return (
     <>
       <aside>
@@ -53,6 +68,10 @@ export default function App() {
           workExperience={workExperience}
           updateField={updateExp}
         ></WorkExperience>
+        <Education
+          qualifications={education}
+          updateField={updateEdu}
+        ></Education>
       </aside>
       <main></main>
     </>
