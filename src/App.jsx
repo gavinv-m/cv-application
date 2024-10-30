@@ -5,6 +5,10 @@ import ContactDetails from './sidebar/ContactDetails';
 import WorkExperience from './sidebar/WorkExperience';
 
 export default function App() {
+  // prettier-ignore
+  const [personalDetails, setPersonalDetails] = useState({firstName: '', lastName: '', 
+    career: '', profile: ''})
+
   const [workExperience, setWorkExperience] = useState([
     // prettier-ignore
     { position: '', company: '', startDate: '', 
@@ -21,11 +25,18 @@ export default function App() {
     });
   };
 
+  const updatePersonal = function updatePersonalInfo(field, newValue) {
+    setPersonalDetails({ ...personalDetails, [field]: newValue });
+  };
+
   return (
     <>
       <aside>
         <Header></Header>
-        <PersonalDetails></PersonalDetails>
+        <PersonalDetails
+          details={personalDetails}
+          updateField={updatePersonal}
+        ></PersonalDetails>
         <ContactDetails></ContactDetails>
         <WorkExperience
           workExperience={workExperience}
