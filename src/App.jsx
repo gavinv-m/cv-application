@@ -19,7 +19,7 @@ export default function App() {
   const [contactDetails, setContactDetails] = useState(
     {email: '', number: '', location: ''});
 
-  const update = function updateExperience(key, field, newValue) {
+  const updateExp = function updateExperience(key, field, newValue) {
     setWorkExperience((prev) => {
       return prev.map((experience) => {
         return experience.key === key
@@ -51,7 +51,7 @@ export default function App() {
         ></ContactDetails>
         <WorkExperience
           workExperience={workExperience}
-          updateField={update}
+          updateField={updateExp}
         ></WorkExperience>
       </aside>
       <main></main>
