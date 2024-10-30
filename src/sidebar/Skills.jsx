@@ -1,4 +1,4 @@
-import Input from './InputField';
+import renderInput from './InputField';
 
 export default function Skills({ skills, updateField }) {
   const section = 'skills';
@@ -12,13 +12,14 @@ export default function Skills({ skills, updateField }) {
       {skills.map((skill) => {
         return (
           <div key={skill.key}>
-            <Input
-              placeholder="(e.g., JavaScript, Communication, Leadership)"
-              maxLength={30}
-              onChange={(e) => {
+            {renderInput(
+              '(e.g., JavaScript, Communication, Leadership)',
+              skill.skill,
+              (e) => {
                 updateField(section, 'skill', e.target.value, skill.key);
-              }}
-            ></Input>
+              },
+              { maxLength: 30 },
+            )}
           </div>
         );
       })}

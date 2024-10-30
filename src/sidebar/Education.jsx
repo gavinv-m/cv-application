@@ -1,4 +1,4 @@
-import Input from './InputField';
+import renderInput from './InputField';
 
 export default function Education({ qualifications, updateField }) {
   const section = 'education';
@@ -12,30 +12,12 @@ export default function Education({ qualifications, updateField }) {
       {qualifications.map((qualification) => {
         return (
           <div key={qualification.key}>
-            <Input
-              placeholder="School/ University"
-              value={qualification.school}
-              onChange={(e) =>
-                updateField(
-                  section,
-                  'school',
-                  e.target.value,
-                  qualification.key,
-                )
-              }
-            ></Input>
-            <Input
-              placeholder="Degree (Year Qualified)"
-              value={qualification.degree}
-              onChange={(e) =>
-                updateField(
-                  section,
-                  'degree',
-                  e.target.value,
-                  qualification.key,
-                )
-              }
-            ></Input>
+            {renderInput('School/ University', qualification.school, (e) =>
+              updateField(section, 'school', e.target.value, qualification.key),
+            )}
+            {renderInput('Degree (Year Qualified)', qualification.degree, (e) =>
+              updateField(section, 'degree', e.target.value, qualification.key),
+            )}
           </div>
         );
       })}

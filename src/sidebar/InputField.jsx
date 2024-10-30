@@ -1,10 +1,5 @@
-export default function Input({
-  placeholder,
-  value,
-  onChange,
-  type = 'text',
-  maxLength = 30,
-}) {
+// prettier-ignore
+function Input({ placeholder, value, onChange, type = 'text', maxLength = 30}) {
   return (
     <input
       type={type}
@@ -13,5 +8,11 @@ export default function Input({
       maxLength={maxLength}
       onChange={onChange}
     />
+  );
+}
+
+export default function renderInput(placeholder, value, onChange) {
+  return (
+    <Input placeholder={placeholder} value={value} onChange={onChange}></Input>
   );
 }

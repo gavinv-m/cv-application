@@ -1,4 +1,4 @@
-import Input from './InputField';
+import renderInput from './InputField';
 
 export default function WorkExperience({ workExperience, updateField }) {
   const section = 'workExperience';
@@ -13,39 +13,18 @@ export default function WorkExperience({ workExperience, updateField }) {
       {workExperience.map((experience) => {
         return (
           <div key={experience.key}>
-            <Input
-              placeholder="Position"
-              value={experience.position}
-              onChange={(e) =>
-                updateField(section, 'position', e.target.value, experience.key)
-              }
-            ></Input>
-            <Input
-              placeholder="Company"
-              value={experience.company}
-              onChange={(e) =>
-                updateField(section, 'company', e.target.value, experience.key)
-              }
-            ></Input>
-            <Input
-              placeholder="Start Month/Year"
-              value={experience.startDate}
-              onChange={(e) =>
-                updateField(
-                  section,
-                  'startDate',
-                  e.target.value,
-                  experience.key,
-                )
-              }
-            ></Input>
-            <Input
-              placeholder="End Month/Year"
-              value={experience.endDate}
-              onChange={(e) =>
-                updateField(section, 'endDate', e.target.value, experience.key)
-              }
-            ></Input>
+            {renderInput('Position', experience.position, (e) =>
+              updateField(section, 'position', e.target.value, experience.key),
+            )}
+            {renderInput('Company', experience.company, (e) =>
+              updateField(section, 'company', e.target.value, experience.key),
+            )}
+            {renderInput('Start Month/Year', experience.startDate, (e) =>
+              updateField(section, 'startDate', e.target.value, experience.key),
+            )}
+            {renderInput('End Month/Year', experience.endDate, (e) =>
+              updateField(section, 'endDate', e.target.value, experience.key),
+            )}
           </div>
         );
       })}

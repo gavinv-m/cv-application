@@ -1,4 +1,4 @@
-import Input from './InputField';
+import renderInput from './InputField';
 
 export default function ContactDetails({ details, updateField }) {
   const section = 'contactDetails';
@@ -9,30 +9,16 @@ export default function ContactDetails({ details, updateField }) {
         {/* TODO: Add svg contact card */}
         <h2>Contact Details</h2>
       </div>
-      <Input
-        type="email"
-        placeholder="Email"
-        value={details.email}
-        onChange={(e) => {
-          updateField(section, 'email', e.target.value);
-        }}
-      ></Input>
+      {renderInput('Email', details.email, (e) => {
+        updateField(section, 'email', e.target.value);
+      })}
       <div className="cell-location">
-        <Input
-          type="tel"
-          placeholder="Enter mobile phone number"
-          value={details.number}
-          onChange={(e) => {
-            updateField(section, 'number', e.target.value);
-          }}
-        ></Input>
-        <Input
-          type="text"
-          placeholder="City, Country"
-          onChange={(e) => {
-            updateField(section, 'location', e.target.value);
-          }}
-        ></Input>
+        {renderInput('Enter mobile phone number', details.number, (e) => {
+          updateField(section, 'number', e.target.value);
+        })}
+        {renderInput('City, Country', details.location, (e) => {
+          updateField(section, 'location', e.target.value);
+        })}
       </div>
     </div>
   );

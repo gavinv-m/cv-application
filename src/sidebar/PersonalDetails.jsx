@@ -1,4 +1,4 @@
-import Input from './InputField';
+import renderInput from './InputField';
 
 export default function PersonalDetails({ details, updateField }) {
   const section = 'personalDetails';
@@ -10,30 +10,20 @@ export default function PersonalDetails({ details, updateField }) {
         <h2>Personal Details</h2>
       </div>
       <div className="name-container">
-        <Input
-          placeholder="First name"
-          maxLength={30}
-          value={details.firstName}
-          onChange={(e) => {
-            updateField(section, 'firstName', e.target.value);
-          }}
-        ></Input>
-        <Input
-          placeholder="Last Name"
-          maxLength={50}
-          value={details.lastName}
-          onChange={(e) => {
-            updateField(section, 'lastName', e.target.value);
-          }}
-        ></Input>
+        {renderInput('First name', details.firstName, (e) => {
+          updateField(section, 'firstName', e.target.value);
+        })}
+        {renderInput('Last name', details.lastName, (e) => {
+          updateField(section, 'lastName', e.target.value);
+        })}
       </div>
-      <Input
-        placeholder="Enter your career title (e.g., Accountant, Architect)"
-        value={details.career}
-        onChange={(e) => {
+      {renderInput(
+        'Enter your career title (e.g., Accountant, Architect)',
+        details.career,
+        (e) => {
           updateField(section, 'career', e.target.value);
-        }}
-      ></Input>
+        },
+      )}
       {/* TODO: Option for user to add pfp */}
       <textarea
         name="personalProfile"
