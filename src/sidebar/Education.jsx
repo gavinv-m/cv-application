@@ -1,6 +1,8 @@
 import Input from './InputField';
 
 export default function Education({ qualifications, updateField }) {
+  const section = 'education';
+
   return (
     <div className="education">
       <div className="education-header">
@@ -14,14 +16,24 @@ export default function Education({ qualifications, updateField }) {
               placeholder="School/ University"
               value={qualification.school}
               onChange={(e) =>
-                updateField(qualification.key, 'school', e.target.value)
+                updateField(
+                  section,
+                  'school',
+                  e.target.value,
+                  qualification.key,
+                )
               }
             ></Input>
             <Input
               placeholder="Degree (Year Qualified)"
               value={qualification.degree}
               onChange={(e) =>
-                updateField(qualification.key, 'degree', e.target.value)
+                updateField(
+                  section,
+                  'degree',
+                  e.target.value,
+                  qualification.key,
+                )
               }
             ></Input>
           </div>

@@ -1,6 +1,8 @@
 import Input from './InputField';
 
 export default function PersonalDetails({ details, updateField }) {
+  const section = 'personalDetails';
+
   return (
     <div className="personal-details">
       <div className="personal-details-header">
@@ -13,7 +15,7 @@ export default function PersonalDetails({ details, updateField }) {
           maxLength={30}
           value={details.firstName}
           onChange={(e) => {
-            updateField('firstName', e.target.value);
+            updateField(section, 'firstName', e.target.value);
           }}
         ></Input>
         <Input
@@ -21,7 +23,7 @@ export default function PersonalDetails({ details, updateField }) {
           maxLength={50}
           value={details.lastName}
           onChange={(e) => {
-            updateField('lastName', e.target.value);
+            updateField(section, 'lastName', e.target.value);
           }}
         ></Input>
       </div>
@@ -29,7 +31,7 @@ export default function PersonalDetails({ details, updateField }) {
         placeholder="Enter your career title (e.g., Accountant, Architect)"
         value={details.career}
         onChange={(e) => {
-          updateField('career', e.target.value);
+          updateField(section, 'career', e.target.value);
         }}
       ></Input>
       {/* TODO: Option for user to add pfp */}

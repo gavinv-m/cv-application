@@ -7,63 +7,35 @@ import Education from './sidebar/Education';
 import Skills from './sidebar/Skills';
 
 export default function App() {
-  // prettier-ignore
-  const [personalDetails, setPersonalDetails] = useState({firstName: '', lastName: '', 
-    career: '', profile: ''});
-
-  const [workExperience, setWorkExperience] = useState([
+  const [resumeData, setResumeData] = useState({
     // prettier-ignore
-    { position: '', company: '', startDate: '', 
-        endDate: '', description: '', key: crypto.randomUUID() },
-  ]);
+    personalDetails: {firstName: '', lastName: '', 
+      career: '', profile: ''},
+    // prettier-ignore
+    workExperience: [{ position: '', company: '', startDate: '', 
+      endDate: '', description: '', key: crypto.randomUUID() }],
 
-  // prettier-ignore
-  const [contactDetails, setContactDetails] = useState(
-    {email: '', number: '', location: ''});
+    contactDetails: { email: '', number: '', location: '' },
+    education: [{ school: '', degree: '', key: crypto.randomUUID() }],
+    skills: [{ skill: '', key: crypto.randomUUID() }],
+  });
 
-  const [education, setEducation] = useState([
-    { school: '', degree: '', key: crypto.randomUUID() },
-  ]);
-
-  const [skills, setSkills] = useState([
-    { skill: '', key: crypto.randomUUID() },
-  ]);
-
-  const updateExp = function updateExperience(key, field, newValue) {
-    setWorkExperience((prev) => {
-      return prev.map((experience) => {
-        return experience.key === key
-          ? { ...experience, [field]: newValue }
-          : experience;
-      });
+  const update = function updateField(section, field, newValue, key = null) {
+    setResumeData((prev) => {
+      if (key !== null) {
+        return {
+          ...prev,
+          [section]: prev[section].map((item) => {
+            return item.key === key ? { ...item, [field]: newValue } : item;
+          }),
+        };
+      }
+      return { ...prev, [section]: { ...prev[section], [field]: newValue } };
     });
   };
 
-  const updatePersonal = function updatePersonalInfo(field, newValue) {
-    setPersonalDetails({ ...personalDetails, [field]: newValue });
-  };
-
-  const updateContacts = function updateContactInfo(field, newValue) {
-    setContactDetails({ ...contactDetails, [field]: newValue });
-  };
-
-  const updateEdu = function updateEducation(key, field, newValue) {
-    setEducation((prev) => {
-      return prev.map((qualification) => {
-        return qualification.key === key
-          ? { ...qualification, [field]: newValue }
-          : qualification;
-      });
-    });
-  };
-
-  const updateSkills = function updateSkillSection(key, newValue) {
-    setSkills((prev) => {
-      return prev.map((skill) => {
-        return skill.key === key ? { skill: newValue } : skill;
-      });
-    });
-  };
+  const { personalDetails, workExperience, contactDetails, education, skills } =
+    resumeData;
 
   return (
     <>
@@ -71,21 +43,18 @@ export default function App() {
         <Header></Header>
         <PersonalDetails
           details={personalDetails}
-          updateField={updatePersonal}
+          updateField={update}
         ></PersonalDetails>
         <ContactDetails
           details={contactDetails}
-          updateField={updateContacts}
+          updateField={update}
         ></ContactDetails>
         <WorkExperience
           workExperience={workExperience}
-          updateField={updateExp}
+          updateField={update}
         ></WorkExperience>
-        <Education
-          qualifications={education}
-          updateField={updateEdu}
-        ></Education>
-        <Skills skills={skills} updateField={updateSkills}></Skills>
+        <Education qualifications={education} updateField={update}></Education>
+        <Skills skills={skills} updateField={update}></Skills>
       </aside>
       <main></main>
     </>

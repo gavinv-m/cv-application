@@ -1,6 +1,8 @@
 import Input from './InputField';
 
 export default function WorkExperience({ workExperience, updateField }) {
+  const section = 'workExperience';
+
   return (
     <div className="work-exp">
       <div className="work-exp-header">
@@ -15,28 +17,33 @@ export default function WorkExperience({ workExperience, updateField }) {
               placeholder="Position"
               value={experience.position}
               onChange={(e) =>
-                updateField(experience.key, 'position', e.target.value)
+                updateField(section, 'position', e.target.value, experience.key)
               }
             ></Input>
             <Input
               placeholder="Company"
               value={experience.company}
               onChange={(e) =>
-                updateField(experience.key, 'company', e.target.value)
+                updateField(section, 'company', e.target.value, experience.key)
               }
             ></Input>
             <Input
               placeholder="Start Month/Year"
               value={experience.startDate}
               onChange={(e) =>
-                updateField(experience.key, 'startDate', e.target.value)
+                updateField(
+                  section,
+                  'startDate',
+                  e.target.value,
+                  experience.key,
+                )
               }
             ></Input>
             <Input
               placeholder="End Month/Year"
               value={experience.endDate}
               onChange={(e) =>
-                updateField(experience.key, 'endDate', e.target.value)
+                updateField(section, 'endDate', e.target.value, experience.key)
               }
             ></Input>
           </div>

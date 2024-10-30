@@ -1,6 +1,8 @@
 import Input from './InputField';
 
 export default function Skills({ skills, updateField }) {
+  const section = 'skills';
+
   return (
     <div className="skills">
       <div className="skills-header">
@@ -14,7 +16,7 @@ export default function Skills({ skills, updateField }) {
               placeholder="(e.g., JavaScript, Communication, Leadership)"
               maxLength={30}
               onChange={(e) => {
-                updateField(skill.key, e.target.value);
+                updateField(section, 'skill', e.target.value, skill.key);
               }}
             ></Input>
           </div>
