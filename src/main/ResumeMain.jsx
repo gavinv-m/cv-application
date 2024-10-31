@@ -1,13 +1,14 @@
 import ExpEduContainer from '../../ExpEduContainer';
+import SkillsCertsContainer from './SkillsCertsContainer';
 
-export default function ResumeMain({ experience, education }) {
+export default function ResumeMain({ experience, education, skills }) {
   return (
     <div className="resume-main">
       <ExpEduContainer
         experience={experience}
         education={education}
       ></ExpEduContainer>
-      <div className="skills-certs-container"></div>
+      <SkillsCertsContainer skills={skills}></SkillsCertsContainer>
     </div>
   );
 }
