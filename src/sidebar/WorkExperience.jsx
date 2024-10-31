@@ -37,6 +37,19 @@ export default function WorkExperience({ workExperience, updateField, add }) {
               {renderInput('End Month/Year', experience.endDate, (e) =>
                 updateField(section, 'endDate', e.target.value, experience.key),
               )}
+              <textarea
+                name="responsibilities"
+                placeholder="Describe your key responsibilities and achievements in this role..."
+                maxLength={400}
+                onChange={(e) => {
+                  updateField(
+                    section,
+                    'description',
+                    e.target.value,
+                    experience.key,
+                  );
+                }}
+              ></textarea>
             </div>
           );
         })}
