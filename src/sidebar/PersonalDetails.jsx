@@ -29,6 +29,9 @@ export default function PersonalDetails({ details, updateField }) {
         name="personalProfile"
         placeholder="Write your personal profile here..."
         maxLength={400}
+        onChange={(e) => {
+          updateField(section, 'profile', e.target.value);
+        }}
       ></textarea>
     </div>
   );
