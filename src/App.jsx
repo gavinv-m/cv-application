@@ -5,6 +5,7 @@ import ContactDetails from './sidebar/ContactDetails';
 import WorkExperience from './sidebar/WorkExperience';
 import Education from './sidebar/Education';
 import Skills from './sidebar/Skills';
+import ResumeHeader from './main/ResumeHeader';
 
 export default function App() {
   const [resumeData, setResumeData] = useState({
@@ -85,7 +86,14 @@ export default function App() {
         ></Education>
         <Skills skills={skills} updateField={update} add={addEntry}></Skills>
       </aside>
-      <main></main>
+      <main>
+        <div className="resume">
+          <ResumeHeader
+            personalDetails={personalDetails}
+            contactDetails={contactDetails}
+          ></ResumeHeader>
+        </div>
+      </main>
     </>
   );
 }
