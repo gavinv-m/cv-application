@@ -1,5 +1,6 @@
 import renderInput from './InputField';
 import AddButton from './Button';
+import DeleteIcon from './icons/DeleteIcon';
 
 export default function WorkExperience({ workExperience, updateField, add }) {
   const section = 'workExperience';
@@ -50,6 +51,7 @@ export default function WorkExperience({ workExperience, updateField, add }) {
                   );
                 }}
               ></textarea>
+              <DeleteIcon></DeleteIcon>
             </div>
           );
         })}

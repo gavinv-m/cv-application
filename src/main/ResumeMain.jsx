@@ -1,4 +1,4 @@
-import ExpEduContainer from '../../ExpEduContainer';
+import ExpEduContainer from './ExpEduContainer';
 import SkillsCertsContainer from './SkillsCertsContainer';
 
 export default function ResumeMain({
