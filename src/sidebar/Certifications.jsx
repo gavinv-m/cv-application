@@ -1,5 +1,6 @@
 import renderInput from './InputField';
 import AddButton from './Button';
+import DeleteIcon from './icons/DeleteIcon';
 
 export default function Certifications({ certifications, updateField, add }) {
   const section = 'certifications';
@@ -12,21 +13,24 @@ export default function Certifications({ certifications, updateField, add }) {
       </div>
       <div>
         {certifications.map((certification) => (
-          <input
-            key={certification.key}
-            type="text"
-            placeholder="Enter certification name (e.g., Project Management Professional)"
-            value={certification.certification}
-            maxLength={30}
-            onChange={(e) =>
-              updateField(
-                section,
-                'certification',
-                e.target.value,
-                certification.key,
-              )
-            }
-          />
+          <div>
+            <input
+              key={certification.key}
+              type="text"
+              placeholder="Enter certification name (e.g., Project Management Professional)"
+              value={certification.certification}
+              maxLength={30}
+              onChange={(e) =>
+                updateField(
+                  section,
+                  'certification',
+                  e.target.value,
+                  certification.key,
+                )
+              }
+            />
+            <DeleteIcon></DeleteIcon>
+          </div>
         ))}
       </div>
       <AddButton section={section} add={add}></AddButton>

@@ -1,5 +1,6 @@
 import renderInput from './InputField';
 import AddButton from './Button';
+import DeleteIcon from './icons/DeleteIcon';
 
 export default function Education({ qualifications, updateField, add }) {
   const section = 'education';
@@ -33,6 +34,7 @@ export default function Education({ qualifications, updateField, add }) {
                     qualification.key,
                   ),
               )}
+              <DeleteIcon></DeleteIcon>
             </div>
           );
         })}
