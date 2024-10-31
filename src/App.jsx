@@ -108,6 +108,7 @@ export default function App() {
             experience={workExperience}
             education={education}
             skills={skills}
+            certifications={certifications}
           ></ResumeMain>
         </div>
       </main>
