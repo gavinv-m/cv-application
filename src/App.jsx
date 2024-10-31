@@ -7,6 +7,7 @@ import Education from './sidebar/Education';
 import Skills from './sidebar/Skills';
 import ResumeHeader from './main/ResumeHeader';
 import ResumeMain from './main/ResumeMain';
+import Certifications from './sidebar/Certifications';
 
 export default function App() {
   const [resumeData, setResumeData] = useState({
@@ -20,6 +21,7 @@ export default function App() {
     contactDetails: { email: '', number: '', location: '' },
     education: [{ school: '', degree: '', key: crypto.randomUUID() }],
     skills: [{ skill: '', key: crypto.randomUUID() }],
+    certifications: [{ certification: '', key: crypto.randomUUID() }],
   });
 
   const update = function updateField(section, field, newValue, key = null) {
@@ -42,7 +44,8 @@ export default function App() {
       if (
         (section === 'workExperience' && prev[section].length >= 2) ||
         (section === 'education' && prev[section].length >= 2) ||
-        (section === 'skills' && prev[section].length >= 7)
+        (section === 'skills' && prev[section].length >= 7) ||
+        (section === 'certifications' && prev[section].length >= 5)
       ) {
         return prev; // Return the previous state without adding a new entry
       }
@@ -54,13 +57,16 @@ export default function App() {
           endDate: '', description: ''}),
         ...(section === 'education' && { school: '', degree: '' }),
         ...(section === 'skills' && { skill: '' }),
+        ...(section === 'certifications' && { certification: '' }),
       };
 
       return { ...prev, [section]: [...prev[section], newEntry] };
     });
   };
 
-  const { personalDetails, workExperience, contactDetails, education, skills } =
+  // prettier-ignore
+  const { personalDetails, workExperience, contactDetails, 
+    education, skills, certifications } =
     resumeData;
 
   return (
@@ -86,6 +92,11 @@ export default function App() {
           add={addEntry}
         ></Education>
         <Skills skills={skills} updateField={update} add={addEntry}></Skills>
+        <Certifications
+          certifications={certifications}
+          updateField={update}
+          add={addEntry}
+        ></Certifications>
       </aside>
       <main>
         <div className="resume">
