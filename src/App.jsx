@@ -36,6 +36,15 @@ export default function App() {
 
   const addEntry = (section) => {
     setResumeData((prev) => {
+      // Limit entries in sections
+      if (
+        (section === 'workExperience' && prev[section].length >= 2) ||
+        (section === 'education' && prev[section].length >= 2) ||
+        (section === 'skills' && prev[section].length >= 7)
+      ) {
+        return prev; // Return the previous state without adding a new entry
+      }
+
       const newEntry = {
         key: crypto.randomUUID(),
         // prettier-ignore
