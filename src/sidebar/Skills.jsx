@@ -23,7 +23,7 @@ export default function Skills({ skills, updateField, add }) {
                 },
                 { maxLength: 30 },
               )}
-              <DeleteIcon></DeleteIcon>
+              {skills.length > 1 && <DeleteIcon></DeleteIcon>}
             </div>
           );
         })}

@@ -29,7 +29,7 @@ export default function Certifications({ certifications, updateField, add }) {
                 )
               }
             />
-            <DeleteIcon></DeleteIcon>
+            {certifications.length > 1 && <DeleteIcon></DeleteIcon>}
           </div>
         ))}
       </div>

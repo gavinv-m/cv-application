@@ -34,7 +34,7 @@ export default function Education({ qualifications, updateField, add }) {
                     qualification.key,
                   ),
               )}
-              <DeleteIcon></DeleteIcon>
+              {qualifications.length > 1 && <DeleteIcon></DeleteIcon>}
             </div>
           );
         })}

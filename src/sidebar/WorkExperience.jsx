@@ -51,7 +51,7 @@ export default function WorkExperience({ workExperience, updateField, add }) {
                   );
                 }}
               ></textarea>
-              <DeleteIcon></DeleteIcon>
+              {workExperience.length > 1 && <DeleteIcon></DeleteIcon>}
             </div>
           );
         })}
