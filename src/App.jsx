@@ -34,6 +34,21 @@ export default function App() {
     });
   };
 
+  const addEntry = (section) => {
+    setResumeData((prev) => {
+      const newEntry = {
+        key: crypto.randomUUID(),
+        // prettier-ignore
+        ...(section === 'workExperience' && {position: '', company: '', startDate: '', 
+          endDate: '', description: ''}),
+        ...(section === 'education' && { school: '', degree: '' }),
+        ...(section === 'skills' && { skill: '' }),
+      };
+
+      return { ...prev, [section]: [...prev[section], newEntry] };
+    });
+  };
+
   const { personalDetails, workExperience, contactDetails, education, skills } =
     resumeData;
 
@@ -52,9 +67,14 @@ export default function App() {
         <WorkExperience
           workExperience={workExperience}
           updateField={update}
+          add={addEntry}
         ></WorkExperience>
-        <Education qualifications={education} updateField={update}></Education>
-        <Skills skills={skills} updateField={update}></Skills>
+        <Education
+          qualifications={education}
+          updateField={update}
+          add={addEntry}
+        ></Education>
+        <Skills skills={skills} updateField={update} add={addEntry}></Skills>
       </aside>
       <main></main>
     </>
