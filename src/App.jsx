@@ -6,6 +6,7 @@ import WorkExperience from './sidebar/WorkExperience';
 import Education from './sidebar/Education';
 import Skills from './sidebar/Skills';
 import ResumeHeader from './main/ResumeHeader';
+import ResumeMain from './main/ResumeMain';
 
 export default function App() {
   const [resumeData, setResumeData] = useState({
@@ -92,6 +93,11 @@ export default function App() {
             personalDetails={personalDetails}
             contactDetails={contactDetails}
           ></ResumeHeader>
+          <ResumeMain
+            experience={workExperience}
+            education={education}
+            skills={skills}
+          ></ResumeMain>
         </div>
       </main>
     </>
