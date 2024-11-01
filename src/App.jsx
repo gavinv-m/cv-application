@@ -100,12 +100,19 @@ export default function App() {
           qualifications={education}
           updateField={update}
           add={addEntry}
+          remove={removeEntry}
         ></Education>
-        <Skills skills={skills} updateField={update} add={addEntry}></Skills>
+        <Skills
+          skills={skills}
+          updateField={update}
+          add={addEntry}
+          remove={removeEntry}
+        ></Skills>
         <Certifications
           certifications={certifications}
           updateField={update}
           add={addEntry}
+          remove={removeEntry}
         ></Certifications>
       </aside>
       <main>

@@ -2,7 +2,12 @@ import renderInput from './InputField';
 import AddButton from './Button';
 import DeleteIcon from './icons/DeleteIcon';
 
-export default function Certifications({ certifications, updateField, add }) {
+export default function Certifications({
+  certifications,
+  updateField,
+  add,
+  remove,
+}) {
   const section = 'certifications';
 
   return (
@@ -28,7 +33,15 @@ export default function Certifications({ certifications, updateField, add }) {
                 )
               }
             />
-            {certifications.length > 1 && <DeleteIcon></DeleteIcon>}
+            {certifications.length > 1 && (
+              <DeleteIcon
+                remove={remove}
+                section={section}
+                itemKey={certification.key}
+              >
+                {' '}
+              </DeleteIcon>
+            )}
           </div>
         ))}
       </div>

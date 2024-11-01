@@ -2,7 +2,7 @@ import renderInput from './InputField';
 import AddButton from './Button';
 import DeleteIcon from './icons/DeleteIcon';
 
-export default function Skills({ skills, updateField, add }) {
+export default function Skills({ skills, updateField, add, remove }) {
   const section = 'skills';
 
   return (
@@ -23,7 +23,13 @@ export default function Skills({ skills, updateField, add }) {
                 },
                 { maxLength: 30 },
               )}
-              {skills.length > 1 && <DeleteIcon></DeleteIcon>}
+              {skills.length > 1 && (
+                <DeleteIcon
+                  remove={remove}
+                  section={section}
+                  itemKey={skill.key}
+                ></DeleteIcon>
+              )}
             </div>
           );
         })}
