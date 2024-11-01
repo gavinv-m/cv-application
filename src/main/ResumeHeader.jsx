@@ -15,15 +15,15 @@ export default function ResumeHeader({ personalDetails, contactDetails }) {
       </div>
       <div className="contact-details">
         <div className="email-container">
-          <EmailIcon></EmailIcon>
+          {contactDetails.email !== '' && <EmailIcon></EmailIcon>}
           <span>{contactDetails.email}</span>
         </div>
         <div className="number-container">
-          <PhoneIcon></PhoneIcon>
+          {contactDetails.number !== '' && <PhoneIcon></PhoneIcon>}
           <span>{contactDetails.number}</span>
         </div>
         <div className="location-container">
-          <LocationIcon></LocationIcon>
+          {contactDetails.location !== '' && <LocationIcon></LocationIcon>}
           <span>{contactDetails.location}</span>
         </div>
       </div>
