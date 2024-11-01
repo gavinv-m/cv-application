@@ -2,7 +2,8 @@ import renderInput from './InputField';
 import AddButton from './Button';
 import DeleteIcon from './icons/DeleteIcon';
 
-export default function WorkExperience({ workExperience, updateField, add }) {
+// prettier-ignore
+export default function WorkExperience({ workExperience, updateField, add, remove }) {
   const section = 'workExperience';
 
   return (
@@ -51,7 +52,8 @@ export default function WorkExperience({ workExperience, updateField, add }) {
                   );
                 }}
               ></textarea>
-              {workExperience.length > 1 && <DeleteIcon></DeleteIcon>}
+              {workExperience.length > 1 
+              && <DeleteIcon remove={remove} section={section} itemKey={experience.key} ></DeleteIcon>}
             </div>
           );
         })}

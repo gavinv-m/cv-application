@@ -64,6 +64,15 @@ export default function App() {
     });
   };
 
+  const removeEntry = (section, key) => {
+    setResumeData((prev) => {
+      return {
+        ...prev,
+        [section]: prev[section].filter((item) => item.key !== key),
+      };
+    });
+  };
+
   // prettier-ignore
   const { personalDetails, workExperience, contactDetails, 
     education, skills, certifications } =
@@ -85,6 +94,7 @@ export default function App() {
           workExperience={workExperience}
           updateField={update}
           add={addEntry}
+          remove={removeEntry}
         ></WorkExperience>
         <Education
           qualifications={education}
