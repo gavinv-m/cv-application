@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Header from './sidebar/Header';
 import PersonalDetails from './sidebar/PersonalDetails';
 import ContactDetails from './sidebar/ContactDetails';
@@ -8,6 +8,7 @@ import Skills from './sidebar/Skills';
 import ResumeHeader from './main/ResumeHeader';
 import ResumeMain from './main/ResumeMain';
 import Certifications from './sidebar/Certifications';
+import html2pdf from 'html2pdf.js';
 
 export default function App() {
   const [resumeData, setResumeData] = useState({
@@ -73,6 +74,11 @@ export default function App() {
     });
   };
 
+  const downloadPDF = () => {
+    const element = document.querySelector('.resume');
+    html2pdf().from(element).save('CV');
+  };
+
   // prettier-ignore
   const { personalDetails, workExperience, contactDetails, 
     education, skills, certifications } =
@@ -81,7 +87,7 @@ export default function App() {
   return (
     <>
       <aside>
-        <Header></Header>
+        <Header downloadPDF={downloadPDF}></Header>
         <PersonalDetails
           details={personalDetails}
           updateField={update}
