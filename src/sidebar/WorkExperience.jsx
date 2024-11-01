@@ -15,9 +15,14 @@ export default function WorkExperience({ workExperience, updateField, add, remov
       </div>
 
       <div>
-        {workExperience.map((experience) => {
+        {workExperience.map((experience, index) => {
           return (
             <div key={experience.key}>
+              <div className='experience-header'>
+                {workExperience.length > 1 && <h3>Experience {index + 1}</h3>}
+                {workExperience.length > 1
+                && <DeleteIcon remove={remove} section={section} itemKey={experience.key} ></DeleteIcon>}
+              </div>
               {renderInput('Position', experience.position, (e) =>
                 updateField(
                   section,
@@ -53,8 +58,6 @@ export default function WorkExperience({ workExperience, updateField, add, remov
                   );
                 }}
               ></textarea>
-              {workExperience.length > 1 
-              && <DeleteIcon remove={remove} section={section} itemKey={experience.key} ></DeleteIcon>}
             </div>
           );
         })}
