@@ -1,4 +1,5 @@
 import renderInput from './InputField';
+import PersonalCard from './icons/PersonalCard';
 
 export default function PersonalDetails({ details, updateField }) {
   const section = 'personalDetails';
@@ -6,7 +7,7 @@ export default function PersonalDetails({ details, updateField }) {
   return (
     <div className="personal-details">
       <div className="personal-details-header">
-        {/* TODO: Add SVG */}
+        <PersonalCard></PersonalCard>
         <h2>Personal Details</h2>
       </div>
       <div className="name-container">

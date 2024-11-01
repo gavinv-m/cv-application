@@ -1,6 +1,7 @@
 import renderInput from './InputField';
 import AddButton from './Button';
 import DeleteIcon from './icons/DeleteIcon';
+import ExperienceIcon from './icons/ExperienceIcon';
 
 // prettier-ignore
 export default function WorkExperience({ workExperience, updateField, add, remove }) {
@@ -9,7 +10,7 @@ export default function WorkExperience({ workExperience, updateField, add, remov
   return (
     <div className="work-exp">
       <div className="work-exp-header">
-        {/* TODO: Add svg for work experience */}
+        <ExperienceIcon></ExperienceIcon>
         <h2>Work Experience</h2>
       </div>
 

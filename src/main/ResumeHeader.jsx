@@ -1,3 +1,7 @@
+import EmailIcon from './icons/EmailIcon';
+import PhoneIcon from './icons/PhoneIcon';
+import LocationIcon from './icons/LocationIcon';
+
 export default function ResumeHeader({ personalDetails, contactDetails }) {
   return (
     <div className="resume-header">
@@ -11,15 +15,15 @@ export default function ResumeHeader({ personalDetails, contactDetails }) {
       </div>
       <div className="contact-details">
         <div className="email-container">
-          {/* TODO: Add email SVG */}
+          <EmailIcon></EmailIcon>
           <span>{contactDetails.email}</span>
         </div>
         <div className="number-container">
-          {/* TODO: Add number svg */}
+          <PhoneIcon></PhoneIcon>
           <span>{contactDetails.number}</span>
         </div>
         <div className="location-container">
-          {/* TODO: Add location svg */}
+          <LocationIcon></LocationIcon>
           <span>{contactDetails.location}</span>
         </div>
       </div>

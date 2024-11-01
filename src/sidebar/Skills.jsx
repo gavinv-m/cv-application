@@ -1,6 +1,7 @@
 import renderInput from './InputField';
 import AddButton from './Button';
 import DeleteIcon from './icons/DeleteIcon';
+import SkillsIcon from './SkillsIcon';
 
 export default function Skills({ skills, updateField, add, remove }) {
   const section = 'skills';
@@ -8,7 +9,7 @@ export default function Skills({ skills, updateField, add, remove }) {
   return (
     <div className="skills">
       <div className="skills-header">
-        {/* TODO: Add skills svg */}
+        <SkillsIcon></SkillsIcon>
         <h2>Skills</h2>
       </div>
       <div>

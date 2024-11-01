@@ -1,6 +1,7 @@
 import renderInput from './InputField';
 import AddButton from './Button';
 import DeleteIcon from './icons/DeleteIcon';
+import CertificationIcon from './CertificationIcon';
 
 export default function Certifications({
   certifications,
@@ -13,7 +14,7 @@ export default function Certifications({
   return (
     <div className="certifications">
       <div className="certifications-header">
-        {/* TODO: Add certification svg */}
+        <CertificationIcon></CertificationIcon>
         <h2>Certifications</h2>
       </div>
       <div>

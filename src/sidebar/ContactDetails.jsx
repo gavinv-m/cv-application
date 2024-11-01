@@ -1,4 +1,5 @@
 import renderInput from './InputField';
+import ContactsIcon from './ContactsIcon';
 
 export default function ContactDetails({ details, updateField }) {
   const section = 'contactDetails';
@@ -6,7 +7,7 @@ export default function ContactDetails({ details, updateField }) {
   return (
     <div className="contact-details">
       <div className="contact-details-header">
-        {/* TODO: Add svg contact card */}
+        <ContactsIcon></ContactsIcon>
         <h2>Contact Details</h2>
       </div>
       {renderInput('Email', details.email, (e) => {

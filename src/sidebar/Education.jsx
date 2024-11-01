@@ -1,6 +1,7 @@
 import renderInput from './InputField';
 import AddButton from './Button';
 import DeleteIcon from './icons/DeleteIcon';
+import EducationIcon from './icons/EducationIcon';
 
 export default function Education({
   qualifications,
@@ -13,7 +14,7 @@ export default function Education({
   return (
     <div className="education">
       <div className="education-header">
-        {/* TODO: Add edu svg */}
+        <EducationIcon></EducationIcon>
         <h2>Education</h2>
       </div>
       <div>
