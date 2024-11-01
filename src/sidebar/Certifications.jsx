@@ -13,9 +13,8 @@ export default function Certifications({ certifications, updateField, add }) {
       </div>
       <div>
         {certifications.map((certification) => (
-          <div>
+          <div key={certification.key}>
             <input
-              key={certification.key}
               type="text"
               placeholder="Enter certification name (e.g., Project Management Professional)"
               value={certification.certification}
