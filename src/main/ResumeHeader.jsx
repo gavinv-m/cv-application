@@ -2,15 +2,21 @@ import EmailIcon from './icons/EmailIcon';
 import PhoneIcon from './icons/PhoneIcon';
 import LocationIcon from './icons/LocationIcon';
 
-export default function ResumeHeader({ personalDetails, contactDetails }) {
+// prettier-ignore
+export default function ResumeHeader({ personalDetails, contactDetails, image }) {
   return (
     <div className="resume-header">
       <div>
-        <div className="name-container">
-          <h1 className="first-name">{personalDetails.firstName}</h1>
-          <h1 className="last-name">{personalDetails.lastName}</h1>
+        <div>
+          <div className="name-container">
+            <h1 className="first-name">{personalDetails.firstName}</h1>
+            <h1 className="last-name">{personalDetails.lastName}</h1>
+          </div>
+          <h2 className="career">{personalDetails.career}</h2>
         </div>
-        <h2 className="career">{personalDetails.career}</h2>
+        <div className="image-container">
+          {image !== null && <img src={image}></img>}
+        </div>
         <p>{personalDetails.profile}</p>
       </div>
       <div className="contact-details">

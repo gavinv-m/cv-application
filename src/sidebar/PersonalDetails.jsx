@@ -1,7 +1,7 @@
 import renderInput from './InputField';
 import PersonalCard from './icons/PersonalCard';
 
-export default function PersonalDetails({ details, updateField }) {
+export default function PersonalDetails({ details, updateField, uploadImage }) {
   const section = 'personalDetails';
 
   return (
@@ -25,7 +25,17 @@ export default function PersonalDetails({ details, updateField }) {
           updateField(section, 'career', e.target.value);
         },
       )}
-      {/* TODO: Option for user to add pfp */}
+      <label htmlFor="fileInput">Upload Image (Optional)</label>
+      <input
+        type="file"
+        accept="image/*"
+        id="fileInput"
+        style={{ display: 'none' }}
+        onChange={() => {
+          uploadImage();
+        }}
+      />
+
       <textarea
         name="personalProfile"
         placeholder="Write your personal profile here..."

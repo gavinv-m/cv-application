@@ -24,6 +24,7 @@ export default function App() {
     skills: [{ skill: '', key: crypto.randomUUID() }],
     certifications: [{ certification: '', key: crypto.randomUUID() }],
   });
+  const [image, setImage] = useState(null);
 
   const update = function updateField(section, field, newValue, key = null) {
     setResumeData((prev) => {
@@ -79,6 +80,20 @@ export default function App() {
     html2pdf().from(element).save('CV');
   };
 
+  const uploadImage = () => {
+    const input = document.querySelector('input[type="file"]');
+    const image = input.files[0];
+
+    if (image && image.type.startsWith('image/')) {
+      const imageSrc = URL.createObjectURL(image);
+      setImage(imageSrc);
+    } else {
+      console.log(
+        'No image file selected or the selected file is not an image.',
+      );
+    }
+  };
+
   // prettier-ignore
   const { personalDetails, workExperience, contactDetails, 
     education, skills, certifications } =
@@ -91,6 +106,7 @@ export default function App() {
         <PersonalDetails
           details={personalDetails}
           updateField={update}
+          uploadImage={uploadImage}
         ></PersonalDetails>
         <ContactDetails
           details={contactDetails}
@@ -126,6 +142,7 @@ export default function App() {
           <ResumeHeader
             personalDetails={personalDetails}
             contactDetails={contactDetails}
+            image={image}
           ></ResumeHeader>
           <ResumeMain
             experience={workExperience}
