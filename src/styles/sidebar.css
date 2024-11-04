@@ -6,9 +6,11 @@ aside {
 
 .header {
     background-color: #fe5a4c;
+    border-radius: 1rem;
     display: grid;
     grid-template-columns: 0.8fr 0.2fr;
     grid-template-rows: 1fr;
+    padding: 2rem;
 }
 
 .personal-details,
@@ -32,7 +34,7 @@ aside {
 .skills-header,
 .certifications-header {
     display: grid;
-    grid-template-columns: 0.2fr 0.8fr;
+    grid-template-columns: 0.1fr 0.8fr;
     grid-template-rows: 1fr;
 }
 
@@ -119,11 +121,28 @@ textarea {
     width: 100%;
 }
 
-svg path {
-    stroke: #ffffff;
-}
-
+svg path,
 .work-exp-header svg,
 .certifications-header svg {
     fill: #ffffff;
+}
+
+.header svg path,
+.personal-details-header svg path {
+    fill: none;
+    stroke: #ffffff;
+}
+
+button {
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    border-width: 0px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    height: 34px;
+    width: 34px;
+}
+
+.work-exp button {
+    margin-top: 0.75rem;
 }
