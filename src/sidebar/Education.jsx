@@ -20,7 +20,7 @@ export default function Education({
       <div>
         {qualifications.map((qualification) => {
           return (
-            <div key={qualification.key}>
+            <div className="education-group" key={qualification.key}>
               {renderInput('School/ University', qualification.school, (e) =>
                 updateField(
                   section,
@@ -40,13 +40,15 @@ export default function Education({
                     qualification.key,
                   ),
               )}
-              {qualifications.length > 1 && (
-                <DeleteIcon
-                  remove={remove}
-                  section={section}
-                  itemKey={qualification.key}
-                ></DeleteIcon>
-              )}
+              <div className="delete-wrapper">
+                {qualifications.length > 1 && (
+                  <DeleteIcon
+                    remove={remove}
+                    section={section}
+                    itemKey={qualification.key}
+                  ></DeleteIcon>
+                )}
+              </div>
             </div>
           );
         })}

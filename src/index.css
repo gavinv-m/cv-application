@@ -1,3 +1,7 @@
+html {
+  font-size: 16px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,9 +9,23 @@
 }
 
 body {
-  background-color: white;
+  background-color: #f8f4f4;
   height: 100vh;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1500px;
   width: 100%;
+
+  /* Descendant: */
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  height: 95%;
+  width: 95%;
+
+  /* Descendants: */
+  display: grid;
+  grid-template-columns: 0.3fr 0.7fr;
 }

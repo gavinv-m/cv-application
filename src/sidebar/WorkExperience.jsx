@@ -17,7 +17,7 @@ export default function WorkExperience({ workExperience, updateField, add, remov
       <div>
         {workExperience.map((experience, index) => {
           return (
-            <div key={experience.key}>
+            <div className='experience-container' key={experience.key}>
               <div className='experience-header'>
                 {workExperience.length > 1 && <h3>Experience {index + 1}</h3>}
                 {workExperience.length > 1

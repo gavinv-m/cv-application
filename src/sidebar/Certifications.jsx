@@ -17,9 +17,9 @@ export default function Certifications({
         <CertificationIcon></CertificationIcon>
         <h2>Certifications</h2>
       </div>
-      <div>
+      <div className="certifications-group">
         {certifications.map((certification) => (
-          <div key={certification.key}>
+          <div className="certification" key={certification.key}>
             <input
               type="text"
               placeholder="Enter certification name (e.g., Project Management Professional)"

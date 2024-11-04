@@ -12,10 +12,10 @@ export default function Skills({ skills, updateField, add, remove }) {
         <SkillsIcon></SkillsIcon>
         <h2>Skills</h2>
       </div>
-      <div>
+      <div className="skills-group">
         {skills.map((skill) => {
           return (
-            <div key={skill.key}>
+            <div className="skill-container" key={skill.key}>
               {renderInput(
                 '(e.g., JavaScript, Communication, Leadership)',
                 skill.skill,

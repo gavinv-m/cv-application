@@ -1,0 +1,129 @@
+aside {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.header {
+    background-color: #fe5a4c;
+    display: grid;
+    grid-template-columns: 0.8fr 0.2fr;
+    grid-template-rows: 1fr;
+}
+
+.personal-details,
+.contact-details,
+.work-exp,
+.education, 
+.skills,
+.certifications {
+    background-color: #fe5a4c;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 2rem;
+}
+
+.personal-details-header,
+.contact-details-header,
+.work-exp-header,
+.education-header,
+.skills-header,
+.certifications-header {
+    display: grid;
+    grid-template-columns: 0.2fr 0.8fr;
+    grid-template-rows: 1fr;
+}
+
+.header h1,
+.personal-details-header > h2,
+.contact-details-header > h2,
+.work-exp-header > h2,
+.education-header > h2,
+.skills-header > h2,
+.certifications-header > h2 {
+    color: white;
+}
+
+.work-exp-header + div {
+    width: 100%;
+}
+
+.experience-container,
+.education-header + div,
+.skills-group,
+.certifications-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.education-group {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(2, 0.45fr) 0.1fr;
+    width: 100%;
+}
+
+.delete-wrapper {
+    height: 25px;
+    width: 25px;
+}
+
+.skill-container,
+.certification {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 0.9fr 0.1fr;
+    width: 100%;
+}
+
+input, label {
+    border-radius: 0.45rem;
+    border-style: none;
+    color: #757575;
+    font-size: 1rem;
+    height: 3rem;
+}
+
+input,
+textarea {
+    padding: 0.5rem;
+}
+
+label {
+    background-color: field;
+    border-width: 0;
+    padding-left: 0.5rem;
+
+    /* Text */
+    align-items: center;
+    display: flex;
+}
+
+
+textarea {
+    border-radius: 0.45rem;
+    border-style: none;
+    color: #757575;
+    height: 150px;
+    resize: none;
+}
+
+.name-container, 
+.cell-location {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    width: 100%;
+}
+
+svg path {
+    stroke: #ffffff;
+}
+
+.work-exp-header svg,
+.certifications-header svg {
+    fill: #ffffff;
+}
