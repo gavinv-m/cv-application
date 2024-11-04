@@ -13,6 +13,11 @@ aside {
     padding: 2rem;
 }
 
+.header svg {
+    cursor: pointer;
+    justify-self: end;
+}
+
 .personal-details,
 .contact-details,
 .work-exp,
@@ -68,9 +73,20 @@ aside {
     width: 100%;
 }
 
+/* Issue when adding another field, whole sidebar resizing */
+.education-group > div {
+    height: 100%;
+    width: 35px;
+}
+
 .delete-wrapper {
-    height: 25px;
-    width: 25px;
+    height: 100%;
+    width: 35px;
+
+    /* Center icon */
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .skill-container,
@@ -85,6 +101,7 @@ input, label {
     border-radius: 0.45rem;
     border-style: none;
     color: #757575;
+    font-family: arial;
     font-size: 1rem;
     height: 3rem;
 }
@@ -109,6 +126,8 @@ textarea {
     border-radius: 0.45rem;
     border-style: none;
     color: #757575;
+    font-family: arial;
+    font-size: 1rem;
     height: 150px;
     resize: none;
 }

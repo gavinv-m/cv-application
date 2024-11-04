@@ -40,7 +40,7 @@ export default function Education({
                     qualification.key,
                   ),
               )}
-              <div className="delete-wrapper">
+              <div>
                 {qualifications.length > 1 && (
                   <DeleteIcon
                     remove={remove}
