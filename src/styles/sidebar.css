@@ -49,11 +49,21 @@ aside {
 .work-exp-header > h2,
 .education-header > h2,
 .skills-header > h2,
-.certifications-header > h2 {
+.certifications-header > h2,
+.experience-header h3 {
     color: white;
 }
 
 .work-exp-header + div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
 }
 
@@ -80,6 +90,7 @@ aside {
 }
 
 .delete-wrapper {
+    cursor: pointer;
     height: 100%;
     width: 35px;
 
@@ -135,7 +146,7 @@ textarea {
 .name-container, 
 .cell-location {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 0.5rem;
     width: 100%;
 }

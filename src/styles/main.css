@@ -1,16 +1,28 @@
 main {
     width: 100%;
+
 }
 
 .resume {
     background-color: #ffffff;
     height: 100%;
+    overflow-y: scroll;
     padding: 2rem;
 
     /* Descendants: */
     display: grid;
     gap: 3rem;
     grid-template-rows: 0.2fr 0.8fr;
+}
+
+/* Firefox */
+.resume {
+  scrollbar-width: none;
+}
+
+/* Chrome, Safari, Edge */
+.resume::-webkit-scrollbar {
+  display: none;
 }
 
 .resume-header {

@@ -1,3 +1,5 @@
+import '../src/styles/sidebar.css';
+import '../src/styles/main.css';
 import { useState, useRef } from 'react';
 import Header from './sidebar/Header';
 import PersonalDetails from './sidebar/PersonalDetails';
@@ -9,8 +11,6 @@ import ResumeHeader from './main/ResumeHeader';
 import ResumeMain from './main/ResumeMain';
 import Certifications from './sidebar/Certifications';
 import html2pdf from 'html2pdf.js';
-import '../src/styles/sidebar.css';
-import '../src/styles/main.css';
 
 export default function App() {
   const [resumeData, setResumeData] = useState({
@@ -79,7 +79,14 @@ export default function App() {
 
   const downloadPDF = () => {
     const element = document.querySelector('.resume');
-    html2pdf().from(element).save('CV');
+    const opt = {
+      margin: 1,
+      filename: 'CV.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 1 },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+    };
+    html2pdf().from(element).set(opt).save();
   };
 
   const uploadImage = () => {

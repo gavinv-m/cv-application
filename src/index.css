@@ -31,3 +31,42 @@ body {
   gap: 2rem;
   grid-template-columns: 0.3fr 1fr;
 }
+
+aside,
+main {
+  max-height: 100%;
+  overflow-y: scroll;
+}
+
+/* Firefox */
+aside,
+main {
+  min-width: 500px;
+  scrollbar-width: none;
+}
+
+/* Chrome, Safari, Edge */
+aside::-webkit-scrollbar,
+main::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #root {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  aside,
+  main {
+    max-height: unset; /* Removes max-height constraint */
+    min-width: 350px;
+    overflow-y: unset;
+  }
+
+  .education-group {
+    display: flex !important;
+    flex-direction: column;
+  }
+}
