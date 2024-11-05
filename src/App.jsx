@@ -10,18 +10,23 @@ import Skills from './sidebar/Skills';
 import ResumeHeader from './main/ResumeHeader';
 import ResumeMain from './main/ResumeMain';
 import Certifications from './sidebar/Certifications';
+import { placeholderText } from './placeholder-text';
 import html2pdf from 'html2pdf.js';
 
 export default function App() {
   const [resumeData, setResumeData] = useState({
     // prettier-ignore
-    personalDetails: {firstName: '', lastName: '', 
-      career: '', profile: ''},
+    personalDetails: {firstName: 'Jane', lastName: 'Doe', 
+      career: 'Architect', profile: `${placeholderText}`},
     // prettier-ignore
     workExperience: [{ position: '', company: '', startDate: '', 
       endDate: '', description: '', key: crypto.randomUUID() }],
 
-    contactDetails: { email: '', number: '', location: '' },
+    contactDetails: {
+      email: 'janedoe@example.com',
+      number: '+1 (555) 123-4567',
+      location: 'Metropolis',
+    },
     education: [{ school: '', degree: '', key: crypto.randomUUID() }],
     skills: [{ skill: '', key: crypto.randomUUID() }],
     certifications: [{ certification: '', key: crypto.randomUUID() }],
