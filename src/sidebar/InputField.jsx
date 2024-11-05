@@ -1,5 +1,5 @@
 // prettier-ignore
-function Input({ placeholder, value, onChange, type = 'text', maxLength = 30}) {
+function Input({ placeholder, value, onChange, type = 'text', maxLength = 25}) {
   return (
     <input
       type={type}

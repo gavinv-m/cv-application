@@ -1,0 +1,116 @@
+main {
+    width: 100%;
+}
+
+.resume {
+    background-color: #ffffff;
+    height: 100%;
+    padding: 2rem;
+
+    /* Descendants: */
+    display: grid;
+    gap: 3rem;
+    grid-template-rows: 0.2fr 0.8fr;
+}
+
+.resume-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.profile-card {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    width: 100%;
+}
+
+.name-career-container,
+.name-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+img {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+
+.career {
+    background-color: #fe5a4c;
+    border-radius: 1rem;
+    color: #ffffff;
+    padding: 0.3rem;
+    width: 55%;
+}
+
+.contacts-container {
+    background-color: #fe5a4c;
+    display: flex;
+    gap: 0.3rem;
+    justify-content: center;
+    padding: 0.3rem;
+}
+
+/* Containers with email, location, phone */
+.contacts-container div {
+    align-items: center;
+    display: flex;
+    gap: 0.4rem;
+    justify-content: center;
+}
+
+.contacts-container div svg {
+    max-height: 20px;
+    max-width: 20px;
+}
+
+.contacts-container span {
+    color: #ffffff;
+}
+
+.number-container > svg path {
+    fill: none;
+    stroke: #ffffff;
+}
+
+
+ul li {
+    list-style-type: none;
+}
+
+.exp-container h3,
+.edu-container h3,
+.skills-container h3,
+.certifications-container h3  {
+    font-size: 2rem;
+}
+
+.resume-main,
+.exp-container,
+.experience-section,
+.exp-edu-container,
+.edu-container,
+.education-section,
+.skills-container,
+.certifications-container,
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.resume-main {
+    gap: 2rem;
+}
+
+.experience-group,
+.education-section-group,
+.skills-certs-container  {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+

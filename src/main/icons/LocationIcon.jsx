@@ -1,5 +1,5 @@
 // prettier-ignore
-export default function LocationIcon({width = '24', height = '24', className = '', color = 'currentColor'}) {
+export default function LocationIcon({width = '20', height = '20', className = '', color = 'currentColor'}) {
   return (
     <svg
       width={width}

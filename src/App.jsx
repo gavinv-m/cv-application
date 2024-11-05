@@ -10,6 +10,7 @@ import ResumeMain from './main/ResumeMain';
 import Certifications from './sidebar/Certifications';
 import html2pdf from 'html2pdf.js';
 import '../src/styles/sidebar.css';
+import '../src/styles/main.css';
 
 export default function App() {
   const [resumeData, setResumeData] = useState({

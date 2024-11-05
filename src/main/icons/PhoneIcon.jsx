@@ -1,5 +1,5 @@
 // prettier-ignore
-export default function PhoneIcon({ width = "24", height = "24", className = "" }) {
+export default function PhoneIcon({ width = "20", height = "20", className = "" }) {
     return (
       <svg
         width={width}
